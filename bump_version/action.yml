@@ -1,0 +1,15 @@
+name: 'versioning'
+description: 'An action to return a new version based on commit type'
+inputs:
+  commit_message:
+    description: 'The last commit message in the pull request (to be merged to the production branch) following the Conventional Commits 1.0.0'
+    required: true
+
+  latest_tag: 
+    description: "The latest tag (the one with the largest timestamp) in the git repo"
+    required: false 
+    default: "1.0.0" 
+
+runs: 
+  using: "node"
+  main: "src/index.js"
